@@ -1241,64 +1241,22 @@ html { scroll-behavior: smooth; }
 </html>
 
 #preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  transition: opacity 0.5s ease, visibility 0.5s;
+    position: fixed !important; /* Erzwingt die Fixierung */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #ffffff !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999 !important; /* Extrem hoher Wert, um über den Header (1000) zu kommen */
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0.8s;
 }
 
-#preloader.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.preloader-content { text-align: center; }
-
-.loader-logo {
-  width: 100px;
-  animation: pulse 1.5s infinite ease-in-out;
-}
-
-.loader-text {
-  font-family: 'Playfair Display', serif;
-  color: #1a3a52;
-  margin-bottom: 20px;
-}
-
-.loader-bar {
-  width: 200px;
-  height: 3px;
-  background: #e8e8e8;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.loader-bar::after {
-  content: '';
-  width: 40%;
-  height: 100%;
-  background: #1a3a52;
-  position: absolute;
-  left: -40%;
-  animation: loading 1.5s infinite ease-in-out;
-}
-
-@keyframes loading {
-  0% { left: -40%; }
-  100% { left: 100%; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
+/* Verhindert, dass man scrollen kann, während der Preloader da ist */
+body.preloader-active {
+    overflow: hidden;
 }
