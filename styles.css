@@ -1014,15 +1014,14 @@ html { scroll-behavior: smooth; }
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #ffffff; /* Hintergrundfarbe */
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Damit es über dem Header liegt */
+  z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s;
 }
 
-/* Klasse zum Ausblenden via JavaScript */
 #preloader.fade-out {
   opacity: 0;
   visibility: hidden;
@@ -1033,10 +1032,9 @@ html { scroll-behavior: smooth; }
 }
 
 .loader-logo {
-  width: 100px; /* Größe deines Logos im Ladebildschirm */
+  width: 100px;
   height: auto;
   margin-bottom: 20px;
-  /* Optional: Pulsieren-Animation */
   animation: pulse 1.5s infinite ease-in-out;
 }
 
@@ -1077,7 +1075,7 @@ html { scroll-behavior: smooth; }
   50% { transform: scale(1.05); opacity: 0.8; }
   100% { transform: scale(1); opacity: 1; }
 }
-</div>
+/* === Ende Preloader Styles === */
 <header>
   <nav>
     <div class="logo-container">
