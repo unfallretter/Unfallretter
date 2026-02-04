@@ -997,68 +997,251 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* Preloader Styling */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff; /* Weißer Hintergrund */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Über allem anderen */
-  transition: opacity 0.5s ease, visibility 0.5s;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unfallretter - Ihr Ingenieurbüro für Kfz-Gutachten</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="logo.png" alt="Unfallretter Logo" class="loader-logo">
+    <h2 class="loader-text">Ihr Kfz-Gutachter in Hamburg und Umgebung</h2>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<header>
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png" alt="Unfallretter Logo" class="logo">
+      <span class="brand-text">Unfallretter</span>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="wissenswertes.html">Wissenswertes</a></li>
+      <li><a href="beispiele.html">Beispiele</a></li>
+    </ul>
 
-.preloader-content {
-  text-align: center;
-  animation: fadeIn 0.8s ease-out;
-}
+    <a href="#kontakt" class="cta-button">Kontakt</a>
+  </nav>
+</header>
 
-.loader-logo {
-  width: 120px; /* Logo etwas größer im Ladescreen */
-  height: auto;
-  margin-bottom: 20px;
-}
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Ihr Ingenieurbüro für Kfz-Gutachten – Kompetenz im Schadensfall</h1>
+      <p class="hero-subtitle">Professionelle Schadensbewertung durch qualifizierte Ingenieursexpertise. Schnell, präzise, vertrauenswürdig.</p>
 
-.loader-text {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary-blue);
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
+      <div class="hero-features">
+        <div class="feature-item"><span class="feature-icon">✓</span><span>24/7 Erreichbarkeit</span></div>
+        <div class="feature-item"><span class="feature-icon">✓</span><span>B.Sc. Maschinenbau</span></div>
+        <div class="feature-item"><span class="feature-icon">✓</span><span>Kfz-Sachverständiger</span></div>
+        <div class="feature-item"><span class="feature-icon">✓</span><span>Angehender Prüfingenieur</span></div>
+      </div>
 
-/* Ein kleiner animierter Ladebalken */
-.loader-bar {
-  width: 200px;
-  height: 3px;
-  background: #eee;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-}
+      <div class="hero-buttons">
+        <a href="#kontakt" class="btn-primary">Gutachten anfragen</a>
+        <a href="leistungen.html" class="btn-secondary">Mehr erfahren</a>
+      </div>
+    </div>
 
-.loader-bar::after {
-  content: '';
-  width: 80px;
-  height: 100%;
-  background: var(--primary-blue);
-  position: absolute;
-  left: -80px;
-  animation: loading 1.5s infinite ease-in-out;
-}
+    <div class="hero-image">
+      <div class="hero-card">
+        <h3>Direkter Kontakt</h3>
+        <p>Wir sind rund um die Uhr für Sie da – auch am Wochenende.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span style="font-size: 1.5rem;">📞</span>
+            <div><strong>Telefon</strong><br>0175-25 35 65 5</div>
+          </div>
+          <div class="contact-item">
+            <span style="font-size: 1.5rem;">✉️</span>
+            <div><strong>E-Mail</strong><br>kontakt@unfallretter.com</div>
+          </div>
+        </div>
+        <a href="https://wa.me/491752535655" class="whatsapp-btn">💬 WhatsApp Chat starten</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-@keyframes loading {
-  0% { left: -80px; }
-  100% { left: 100%; }
-}
+<section class="reviews-section">
+  <div class="section-header">
+    <div class="section-label">Kundenstimmen</div>
+    <h2 class="section-title">Was unsere Kunden sagen</h2>
+    <p class="section-description">Bewertet mit 5.0 Sternen auf Google</p>
+  </div>
 
-/* Wenn der Preloader ausgeblendet wird */
-#preloader.fade-out {
-  opacity: 0;
-  visibility: hidden;
-}
+  <div class="reviews-container">
+    <div class="reviews-track">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Herr Yakubi hat den Schaden an meinem Wagen extrem schnell und präzise aufgenommen. Sehr kompetent!"</p>
+        <div class="review-author">Markus Schmidt</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Top Service! Die Abwicklung mit der Versicherung lief dank des Gutachtens völlig reibungslos. Vielen Dank!"</p>
+        <div class="review-author">Sabine Weber</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Ein Ingenieur, der sein Handwerk versteht. Ehrlich, direkt und sehr freundlich. Absolut empfehlenswert."</p>
+        <div class="review-author">Thomas Müller</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Nach meinem unverschuldeten Unfall wurde mir hier sofort geholfen. Das Gutachten war in 24h fertig."</p>
+        <div class="review-author">Elena Fischer</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Herr Yakubi hat den Schaden an meinem Wagen extrem schnell und präzise aufgenommen. Sehr kompetent!"</p>
+        <div class="review-author">Markus Schmidt</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Top Service! Die Abwicklung mit der Versicherung lief dank des Gutachtens völlig reibungslos. Vielen Dank!"</p>
+        <div class="review-author">Sabine Weber</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Ein Ingenieur, der sein Handwerk versteht. Ehrlich, direkt und sehr freundlich. Absolut empfehlenswert."</p>
+        <div class="review-author">Thomas Müller</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Nach meinem unverschuldeten Unfall wurde mir hier sofort geholfen. Das Gutachten war in 24h fertig."</p>
+        <div class="review-author">Elena Fischer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-top">
+  <div class="section-header">
+    <div class="section-label">Schnellzugriff</div>
+    <h2 class="section-title">Unsere Leistungen auf einen Blick</h2>
+    <p class="section-description">Unfallgutachten, Schadengutachten, Wertgutachten und mehr – alles aus einer Hand.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <h3>Unfallgutachten</h3>
+      <p>Unabhängige Schadensbewertung für die Regulierung – präzise, nachvollziehbar und belastbar.</p>
+      <a class="cta-button" href="leistungen.html" style="display:inline-block;margin-top:1rem;">Alle Leistungen</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Beweissicherung</h3>
+      <p>Technische Analysen bei strittigen Fällen – ideal für Versicherungen und Gerichte.</p>
+      <a class="cta-button" href="leistungen.html" style="display:inline-block;margin-top:1rem;">Mehr erfahren</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact-section">
+  <div class="section-header">
+    <div class="section-label">Kontakt</div>
+    <h2 class="section-title">Nehmen Sie Kontakt auf</h2>
+    <p class="section-description">Wir sind 24 Stunden am Tag, 7 Tage die Woche für Sie erreichbar</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-methods">
+      <div class="contact-method">
+        <h3><span class="contact-icon">📞</span> Telefon</h3>
+        <a href="tel:+491752535655">0175-25 35 65 5</a>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">24/7 Hotline – auch nachts und am Wochenende</p>
+      </div>
+      <div class="contact-method">
+        <h3><span class="contact-icon">✉️</span> E-Mail</h3>
+        <a href="mailto:kontakt@unfallretter.com">kontakt@unfallretter.com</a>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Wir antworten in der Regel innerhalb von 2 Stunden</p>
+      </div>
+      <div class="contact-method">
+        <h3><span class="contact-icon">💬</span> WhatsApp</h3>
+        <a href="https://wa.me/491752535655">Chat starten</a>
+      </div>
+      <div class="contact-method">
+        <h3><span class="contact-icon">🚗</span> Vor-Ort-Service</h3>
+        <p style="opacity: 0.9;">Bundesweite Begutachtung an Ihrem Wunschort: Zuhause, Werkstatt oder Unfallort.</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Schnellanfrage</h3>
+      <form action="https://formspree.io/f/xykdgygr" method="POST">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefon *</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Ihre Nachricht *</label>
+          <textarea id="message" name="message" required placeholder="Bitte beschreiben Sie kurz Ihren Schadensfall..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Anfrage absenden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Unfallretter</h4>
+      <p>Ali Yakubi, B.Sc.<br>Maschinenbau-Ingenieur<br>Kfz-Sachverständiger</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Kontakt</h4>
+      <p>Tel: 0175-25 35 65 5<br>E-Mail: kontakt@unfallretter.com</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Leistungen</h4>
+      <p>
+        <a href="leistungen.html">Unfallgutachten</a><br>
+        <a href="leistungen.html">Schadengutachten</a><br>
+        <a href="leistungen.html">Wertgutachten</a>
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Rechtliches</h4>
+      <p>
+        <a href="impressum.html">Impressum</a><br>
+        <a href="datenschutz.html">Datenschutz</a><br>
+        <a href="agb.html">AGB</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Unfallretter - Ingenieurbüro für Kfz-Technik.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
