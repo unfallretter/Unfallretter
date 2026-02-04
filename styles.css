@@ -938,27 +938,25 @@ html { scroll-behavior: smooth; }
 
 /* Reviews Ticker Styling */
 .reviews-section {
-  background: #f9f9f9;
-  padding: 4rem 0;
-  overflow: hidden; /* Wichtig für den Ticker */
+  background: #f4f7f9;
+  padding: 5rem 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .reviews-container {
   width: 100%;
-  overflow: hidden;
-  position: relative;
   display: flex;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
 .reviews-track {
   display: flex;
-  width: calc(350px * 8); /* Breite einer Karte * Anzahl der Karten */
-  animation: scroll 30s linear infinite;
-}
-
-/* Pause beim Drüberfahren (Hover) */
-.reviews-track:hover {
-  animation-play-state: paused;
+  /* Errechnet die Breite: (Kartenbreite 320px + Margin 30px) * 8 Karten */
+  width: calc(350px * 8); 
+  animation: scroll 25s linear infinite;
+  will-change: transform;
 }
 
 .review-card {
@@ -966,40 +964,35 @@ html { scroll-behavior: smooth; }
   background: white;
   margin: 0 15px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  flex-shrink: 0;
-  border-bottom: 3px solid var(--primary-blue);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  flex-shrink: 0; /* Verhindert das Zusammenquetschen */
+  border-top: 4px solid var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.review-stars {
-  color: #ffc107;
-  margin-bottom: 1rem;
+.reviews-track:hover {
+  animation-play-state: paused;
 }
 
-.review-card p {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: var(--accent-gray);
-  margin-bottom: 1rem;
-}
-
-.review-author {
-  font-weight: 600;
-  color: var(--dark-blue);
-  font-size: 0.9rem;
-}
-
-/* Die Animation */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-350px * 4)); } /* Bewegt die Hälfte der Karten */
+  100% { transform: translateX(calc(-350px * 4)); }
 }
 
-/* Mobile Anpassung */
+/* Mobile Fix */
 @media (max-width: 768px) {
-  .review-card { width: 280px; }
+  .reviews-track {
+    width: calc(280px * 8);
+  }
+  .review-card {
+    width: 250px;
+    margin: 0 10px;
+  }
   @keyframes scroll {
-    100% { transform: translateX(calc(-310px * 4)); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-270px * 4)); }
   }
 }
