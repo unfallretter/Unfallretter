@@ -935,3 +935,71 @@ html { scroll-behavior: smooth; }
     display: flex;
   }
 }
+
+/* Reviews Ticker Styling */
+.reviews-section {
+  background: #f9f9f9;
+  padding: 4rem 0;
+  overflow: hidden; /* Wichtig für den Ticker */
+}
+
+.reviews-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.reviews-track {
+  display: flex;
+  width: calc(350px * 8); /* Breite einer Karte * Anzahl der Karten */
+  animation: scroll 30s linear infinite;
+}
+
+/* Pause beim Drüberfahren (Hover) */
+.reviews-track:hover {
+  animation-play-state: paused;
+}
+
+.review-card {
+  width: 320px;
+  background: white;
+  margin: 0 15px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+  border-bottom: 3px solid var(--primary-blue);
+}
+
+.review-stars {
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+.review-card p {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent-gray);
+  margin-bottom: 1rem;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+}
+
+/* Die Animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-350px * 4)); } /* Bewegt die Hälfte der Karten */
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+  .review-card { width: 280px; }
+  @keyframes scroll {
+    100% { transform: translateX(calc(-310px * 4)); }
+  }
+}
