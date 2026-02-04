@@ -24,3 +24,11 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    
+    // Warte 2 Sekunden, dann blende ihn aus
+    setTimeout(function() {
+        preloader.classList.add('fade-out');
+    }, 2000);
+});
