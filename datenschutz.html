@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum - Unfallretter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Sorgt dafür, dass der Text unter dem fixierten Header beginnt */
+    .legal-content {
+      max-width: 900px;
+      margin: 140px auto 60px; /* Genug Abstand nach oben wegen Header */
+      padding: 0 5%;
+    }
+    .legal-content h1 { font-family: 'Playfair Display', serif; color: var(--primary-blue); margin-bottom: 2rem; }
+    .legal-content h2 { font-family: 'Playfair Display', serif; color: var(--dark-blue); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.4rem; }
+    .legal-content p { margin-bottom: 1rem; color: var(--accent-gray); line-height: 1.8; }
+    .legal-content a { color: var(--primary-blue); text-decoration: none; }
+  </style>
+</head>
+<body>
 
+<header>
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png" alt="Unfallretter Logo" class="logo">
+      <span class="brand-text">Unfallretter</span>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="wissenswertes.html">Wissenswertes</a></li>
+      <li><a href="beispiele.html">Beispiele</a></li>
+    </ul>
+
+    <a href="index.html#kontakt" class="cta-button">Kontakt</a>
+  </nav>
+</header>
+
+<main class="legal-content">
+  <h1>Impressum</h1>
+  <p><strong>B.Sc. Ali Yakubi</strong><br>Kfz-Sachverständiger</p>
+  </main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Rechtliches</h4>
+      <p>
+        <a href="impressum.html">Impressum</a><br>
+        <a href="datenschutz.html">Datenschutz</a><br>
+        <a href="agb.html">AGB</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Unfallretter - Ingenieurbüro für Kfz-Technik.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
