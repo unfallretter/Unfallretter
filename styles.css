@@ -1007,12 +1007,76 @@ html { scroll-behavior: smooth; }
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div id="preloader">
-  <div class="preloader-content">
-    <img src="logo.png" alt="Unfallretter Logo" class="loader-logo">
-    <h2 class="loader-text">Ihr Kfz-Gutachter in Hamburg und Umgebung</h2>
-    <div class="loader-bar"></div>
-  </div>
+/* === Preloader Styles === */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff; /* Hintergrundfarbe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Damit es über dem Header liegt */
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+/* Klasse zum Ausblenden via JavaScript */
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  width: 100px; /* Größe deines Logos im Ladebildschirm */
+  height: auto;
+  margin-bottom: 20px;
+  /* Optional: Pulsieren-Animation */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.loader-text {
+  font-family: 'Playfair Display', serif;
+  color: #1a3a52;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background: #e8e8e8;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.loader-bar::after {
+  content: '';
+  width: 40%;
+  height: 100%;
+  background: #1a3a52;
+  position: absolute;
+  left: -40%;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
 </div>
 <header>
   <nav>
