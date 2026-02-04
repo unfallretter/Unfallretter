@@ -30,5 +30,5 @@ window.addEventListener('load', function() {
     // Warte 2 Sekunden, dann blende ihn aus
     setTimeout(function() {
         preloader.classList.add('fade-out');
-    }, 2000);
+    }, 4000);
 });
